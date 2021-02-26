@@ -43,10 +43,28 @@
     </div>
     <div class="flex-container" id="video_0_container">
       <div>
-        <div  v-show="video_2">
+        <div v-show="video_2">
           <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" src="https://dogcam.desertdogdaycare.com:8100/Mjpeg/2?authToken=abccb262-c400-4205-81e4-73ce28134d13">
         </div>
         <button @click="video_2 = !video_2">Toggle Video 3</button>
+      </div>
+      <div>
+        <div v-show="honey_waldo" style="height: 400px;width: 600px;">
+          <h3>Please Find Me :)</h3>
+          <img src="honey1.jpg" style="max-width: 100%; max-height: 100%;">
+        </div>
+        <br>
+        <br>
+        <div>
+          <button @click="honey_waldo = !honey_waldo">Toggle Honey Photo</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p @click="honey_credit = !honey_credit">Credit</p>
+      <div v-show="honey_credit" style="height: 400px;width: 600px;">
+        <h3>Honey!</h3>
+        <img src="honeycode.jpg" style="max-width: 100%; max-height: 100%;">
       </div>
     </div>
   </div>
@@ -57,7 +75,9 @@
       data: {
         video_0: true,
         video_1: true,
-        video_2: true
+        video_2: true,
+        honey_waldo: true,
+        honey_credit: false,
       }
     });
   </script>
