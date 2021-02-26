@@ -30,13 +30,13 @@
     <div class="flex-container">
       <div id="video_0_container">
           <div v-show="video_0">
-            <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" src="https://dogcam.desertdogdaycare.com:8100/Mjpeg/0?authToken=abccb262-c400-4205-81e4-73ce28134d13">
+            <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" :src="video_0_source">
           </div>
           <button @click="video_0 = !video_0">Toggle Video 1</button>
       </div>
       <div id="video_1_container">
           <div v-show="video_1">
-            <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" src="https://dogcam.desertdogdaycare.com:8100/Mjpeg/1?authToken=abccb262-c400-4205-81e4-73ce28134d13">
+            <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" :src="video_1_source">
           </div>
           <button @click="video_1 = !video_1">Toggle Video 2</button>
       </div>
@@ -44,7 +44,7 @@
     <div class="flex-container" id="video_0_container">
       <div>
         <div v-show="video_2">
-          <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" src="https://dogcam.desertdogdaycare.com:8100/Mjpeg/2?authToken=abccb262-c400-4205-81e4-73ce28134d13">
+          <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" :src="video_2_source">
         </div>
         <button @click="video_2 = !video_2">Toggle Video 3</button>
       </div>
@@ -78,6 +78,17 @@
         video_2: true,
         honey_waldo: true,
         honey_credit: false,
+      },
+      computed: {
+        video_0_source: function () {
+          return this.video_0 ? 'https://dogcam.desertdogdaycare.com:8100/Mjpeg/0?authToken=abccb262-c400-4205-81e4-73ce28134d13' : '';
+        },
+        video_1_source: function () {
+          return this.video_1 ? 'https://dogcam.desertdogdaycare.com:8100/Mjpeg/1?authToken=abccb262-c400-4205-81e4-73ce28134d13' : '';
+        },
+        video_2_source: function () {
+          return this.video_2 ? 'https://dogcam.desertdogdaycare.com:8100/Mjpeg/2?authToken=abccb262-c400-4205-81e4-73ce28134d13' : '';
+        },
       }
     });
   </script>
